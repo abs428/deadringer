@@ -1,2 +1,2 @@
 # deadringer
-Creates near duplicates of the records in your dataset by adding different kinds of noise.
+Creates near duplicates of the records in datasets by adding different kinds of noise.
