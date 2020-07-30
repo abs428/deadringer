@@ -2,6 +2,7 @@
 This module contains the main code for the deadringer module.
 '''
 import typing
+from . import pd
 
 class NosiyData:
     '''This defines the data that is supposed to contain the data with noise
@@ -62,6 +63,17 @@ class NosiyData:
                        swapping names with addresses.
         - space_insertion: Probability of inserting a space into a field value
                            (thus splitting a word).
+        - space_deletion: Probability of deleting a space (if available) in a
+                          field (and thus merging two words).
+        - missing: Probability of a missing value in the field
+
+        Assuming that only one kind of error can per field per record, the sum
+        over the probabilities must either be 1.0 or 0.0 (meaning none of them).
+        Concertely, that means sum([misspelling, insertion, deletion, substitution,
+        transposition, swap_fields, space_insertion, space_deletion, missing])
+        must equal either 1 or 0. However, the validity of this assumption is
+        suspect because two kinds of errors can (and do) in a single field.
+
 
         Parameters
         ----------
