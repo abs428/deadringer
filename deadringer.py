@@ -61,6 +61,8 @@ class NosiyData:
                        fields more liable to be swapped rather than others?
                        FirstName-LastName swaps might be more probable than
                        swapping names with addresses.
+        - swap_words:  Probability to swap two words in a field (given there are
+                       at least two words in a field)
         - space_insertion: Probability of inserting a space into a field value
                            (thus splitting a word).
         - space_deletion: Probability of deleting a space (if available) in a
